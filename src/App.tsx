@@ -27,12 +27,25 @@ export function App() {
     return processLifeData(rawDataset);
   }, [rawDataset]);
 
-  // Handle custom dataset file upload
+  // Handle custom dataset file upload with size limits and schema validation
   const handleUploadDataset = (file: File) => {
+    if (file.size > 20 * 1024 * 1024) {
+      alert('File size exceeds the 20MB limit. Please upload a smaller dataset.');
+      return;
+    }
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
-        const json = JSON.parse(e.target?.result as string);
+        const text = e.target?.result as string;
+        if (!text || !text.trim()) {
+          alert('Uploaded file is empty.');
+          return;
+        }
+        const json = JSON.parse(text);
+        if (!json || (typeof json !== 'object' && !Array.isArray(json))) {
+          alert('Invalid dataset format. Expected a JSON array or object.');
+          return;
+        }
         setRawDataset(json);
         setCurrentPreset('custom');
         setActiveTab('chapters');

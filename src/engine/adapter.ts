@@ -143,8 +143,18 @@ export function adaptRawReceipt(raw: any, index: number): Receipt {
   const location = normalizeLocation(raw.location ?? raw.geo ?? raw.coords);
   const tags = normalizeTags(raw.tags ?? raw.categories ?? raw.labels);
 
-  // Preserve extra metadata cleanly
-  const meta = { ...(raw.meta ?? {}) };
+  // Preserve extra metadata cleanly with prototype pollution protection
+  const FORBIDDEN_KEYS = new Set(['__proto__', 'constructor', 'prototype']);
+  const meta: Record<string, any> = {};
+
+  if (raw.meta && typeof raw.meta === 'object' && !Array.isArray(raw.meta)) {
+    for (const [mk, mv] of Object.entries(raw.meta)) {
+      if (!FORBIDDEN_KEYS.has(mk) && mv !== undefined) {
+        meta[mk] = mv;
+      }
+    }
+  }
+
   const standardKeys = new Set([
     'id', '_id', 'receipt_id', 'uuid',
     'type', 'kind', 'category', 'item_type',
@@ -158,7 +168,7 @@ export function adaptRawReceipt(raw: any, index: number): Receipt {
   ]);
 
   for (const [key, value] of Object.entries(raw)) {
-    if (!standardKeys.has(key) && value !== undefined) {
+    if (!standardKeys.has(key) && !FORBIDDEN_KEYS.has(key) && value !== undefined) {
       meta[key] = value;
     }
   }
