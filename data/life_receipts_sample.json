@@ -1,0 +1,1493 @@
+{
+  "story_year": 2018,
+  "generated_note": "Sample 'life receipts' assembled for Your Life, In Receipts.",
+  "counts_by_type": {
+    "purchase": 380,
+    "music": 180,
+    "place": 80
+  },
+  "receipts": [
+    {
+      "id": "d3e77e1f47",
+      "type": "place",
+      "timestamp": "2018-01-01T20:00:00",
+      "title": "Kottayam",
+      "subtitle": "Venkatesh, Deshmukh and Lala Pvt Ltd",
+      "amount": 5219.4,
+      "location": {
+        "lat": 88.6565,
+        "lng": 133.709355,
+        "city": "Kottayam"
+      },
+      "tags": [
+        "travel",
+        "work"
+      ],
+      "meta": {
+        "job_context": "Investment banker, operational"
+      }
+    },
+    {
+      "id": "0f39b209ea",
+      "type": "music",
+      "timestamp": "2018-01-03T04:15:22",
+      "title": "You're Nobody Till Somebody Loves You",
+      "subtitle": "Dean Martin · The Essential Dean Martin",
+      "tags": [
+        "late_night"
+      ],
+      "meta": {
+        "artist": "Dean Martin",
+        "platform": "android",
+        "ms_played": 116533,
+        "skipped": false
+      }
+    },
+    {
+      "id": "e7055fba7b",
+      "type": "place",
+      "timestamp": "2018-01-05T03:00:00",
+      "title": "Jehanabad",
+      "subtitle": "Ramanathan, Brar and Amble Pvt Ltd",
+      "amount": 9783.69,
+      "location": {
+        "lat": 34.726396,
+        "lng": 153.792637,
+        "city": "Jehanabad"
+      },
+      "tags": [
+        "travel"
+      ],
+      "meta": {
+        "job_context": "Location manager"
+      }
+    },
+    {
+      "id": "b3cc84b0b3",
+      "type": "place",
+      "timestamp": "2018-01-10T00:00:00",
+      "title": "Tiruvottiyur",
+      "subtitle": "Dugar Inc Pvt Ltd",
+      "amount": 4783.1,
+      "location": {
+        "lat": -7.99242,
+        "lng": 13.417342,
+        "city": "Tiruvottiyur"
+      },
+      "tags": [
+        "travel"
+      ],
+      "meta": {
+        "job_context": "Scientist, research"
+      }
+    },
+    {
+      "id": "ad30d9912c",
+      "type": "music",
+      "timestamp": "2018-01-10T19:40:54",
+      "title": "Bold as Love",
+      "subtitle": "Jimi Hendrix · Axis: Bold As Love",
+      "tags": [
+        "rock",
+        "evening"
+      ],
+      "meta": {
+        "artist": "Jimi Hendrix",
+        "platform": "android",
+        "ms_played": 47313,
+        "skipped": false
+      }
+    },
+    {
+      "id": "10da1e2db7",
+      "type": "purchase",
+      "timestamp": "2018-01-13T20:55:55",
+      "title": "clothes ironing",
+      "subtitle": "Apparel / Laundry",
+      "amount": 80,
+      "tags": [
+        "apparel",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Saving Bank account 1",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "d572aaee2a",
+      "type": "purchase",
+      "timestamp": "2018-01-13T20:57:11",
+      "title": "Thyroid Tablets",
+      "subtitle": "Health / Medicine",
+      "amount": 740,
+      "tags": [
+        "health",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "c6000cee5f",
+      "type": "purchase",
+      "timestamp": "2018-01-14T07:30:30",
+      "title": "Current Residence to Place 0",
+      "subtitle": "Transportation / auto",
+      "amount": 15,
+      "location": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "8683dbfd57",
+      "type": "purchase",
+      "timestamp": "2018-01-14T10:54:48",
+      "title": "mumbai University Kalina to Santacruz station",
+      "subtitle": "Transportation / auto",
+      "amount": 40,
+      "location": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "6697f6b102",
+      "type": "purchase",
+      "timestamp": "2018-01-14T12:21:16",
+      "title": "Pali hill to Bandra station",
+      "subtitle": "Transportation / auto",
+      "amount": 23,
+      "location": {
+        "lat": 19.055,
+        "lng": 72.83,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "a42874ef66",
+      "type": "purchase",
+      "timestamp": "2018-01-14T15:21:39",
+      "title": "Head band",
+      "subtitle": "Apparel / Clothing",
+      "amount": 199,
+      "tags": [
+        "apparel",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "b74e6610df",
+      "type": "purchase",
+      "timestamp": "2018-01-14T15:22:04",
+      "title": "Vibrating electronic massage tool",
+      "subtitle": "Household / Hardware",
+      "amount": 798,
+      "tags": [
+        "household",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "2ddf5c98b4",
+      "type": "purchase",
+      "timestamp": "2018-01-14T15:22:40",
+      "title": "Decathlon to station",
+      "subtitle": "Transportation / auto",
+      "amount": 25,
+      "location": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "23b1301a5f",
+      "type": "purchase",
+      "timestamp": "2018-01-14T15:22:51",
+      "title": "station to Decathlon",
+      "subtitle": "Transportation / auto",
+      "amount": 20,
+      "location": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "8d958629c8",
+      "type": "purchase",
+      "timestamp": "2018-01-14T15:23:43",
+      "title": "Place 0 to Santacruz return",
+      "subtitle": "Transportation / Train",
+      "amount": 40,
+      "location": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "5bb7ac5de1",
+      "type": "place",
+      "timestamp": "2018-01-14T23:00:00",
+      "title": "Satara",
+      "subtitle": "Bhatti PLC Pvt Ltd",
+      "amount": 7292.34,
+      "location": {
+        "lat": 57.035884,
+        "lng": -20.719375,
+        "city": "Satara"
+      },
+      "tags": [
+        "travel"
+      ],
+      "meta": {
+        "job_context": "Tour manager"
+      }
+    },
+    {
+      "id": "1b3b4e503e",
+      "type": "purchase",
+      "timestamp": "2018-01-15T13:50:29",
+      "title": "Uber auto: Place 4 Station to Current Residence society",
+      "subtitle": "Transportation / auto",
+      "amount": 266,
+      "location": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Saving Bank account 1",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "7f362b6a2e",
+      "type": "purchase",
+      "timestamp": "2018-01-15T13:51:31",
+      "title": "Place 0 to Place 3 returns",
+      "subtitle": "Transportation / Train",
+      "amount": 40,
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "fb6a166f3e",
+      "type": "purchase",
+      "timestamp": "2018-01-15T16:54:35",
+      "title": "onion 1 kg + half kg potato",
+      "subtitle": "Food / Grocery",
+      "amount": 38,
+      "tags": [
+        "food",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "cc3185c757",
+      "type": "purchase",
+      "timestamp": "2018-01-15T16:55:27",
+      "title": "Chitale Srikhand",
+      "subtitle": "Food / Sweets",
+      "amount": 284,
+      "tags": [
+        "food",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "a5cd62916a",
+      "type": "purchase",
+      "timestamp": "2018-01-16T07:11:55",
+      "title": "Marathon",
+      "subtitle": "Social Life / Leisure",
+      "amount": 298,
+      "tags": [
+        "social life",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "3d2a642d2e",
+      "type": "purchase",
+      "timestamp": "2018-01-16T08:22:48",
+      "title": "1 lit milk",
+      "subtitle": "Food / Milk",
+      "amount": 69,
+      "tags": [
+        "food",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Saving Bank account 1",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "82b66cbaf9",
+      "type": "purchase",
+      "timestamp": "2018-01-16T09:20:40",
+      "title": "Bhagar 1kg 130 + idli pith 1kg 35",
+      "subtitle": "Household / Kirana",
+      "amount": 165,
+      "tags": [
+        "household",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "4ceed4a22e",
+      "type": "music",
+      "timestamp": "2018-01-17T02:50:42",
+      "title": "Ruby, Don't Take Your Love To Town",
+      "subtitle": "The Killers · Sawdust",
+      "tags": [
+        "late_night"
+      ],
+      "meta": {
+        "artist": "The Killers",
+        "platform": "android",
+        "ms_played": 40082,
+        "skipped": false
+      }
+    },
+    {
+      "id": "43f2e475c2",
+      "type": "music",
+      "timestamp": "2018-01-18T06:37:59",
+      "title": "Rip",
+      "subtitle": "Haunted Coffee · The Kindergarten EP",
+      "tags": [
+        "acoustic"
+      ],
+      "meta": {
+        "artist": "Haunted Coffee",
+        "platform": "android",
+        "ms_played": 2097,
+        "skipped": false
+      }
+    },
+    {
+      "id": "8e44611ef4",
+      "type": "purchase",
+      "timestamp": "2018-01-18T21:57:46",
+      "title": "Two Wheeler Bikedelux second installment",
+      "subtitle": "Transportation / Bike",
+      "amount": 50000,
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Saving Bank account 1",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "73c4207a6c",
+      "type": "music",
+      "timestamp": "2018-01-19T05:17:45",
+      "title": "Goodnight Ladies",
+      "subtitle": "Lou Reed · Transformer",
+      "tags": [
+        "late_night",
+        "classic"
+      ],
+      "meta": {
+        "artist": "Lou Reed",
+        "platform": "android",
+        "ms_played": 4133,
+        "skipped": false
+      }
+    },
+    {
+      "id": "cd9a3ef472",
+      "type": "music",
+      "timestamp": "2018-01-19T06:10:54",
+      "title": "Screwdriver",
+      "subtitle": "The White Stripes · The White Stripes",
+      "tags": [
+        "rock"
+      ],
+      "meta": {
+        "artist": "The White Stripes",
+        "platform": "windows",
+        "ms_played": 89620,
+        "skipped": false
+      }
+    },
+    {
+      "id": "8d27986519",
+      "type": "music",
+      "timestamp": "2018-01-19T07:07:43",
+      "title": "Beware Of Darkness - Remastered 2014",
+      "subtitle": "George Harrison · All Things Must Pass",
+      "tags": [
+        "rock",
+        "morning"
+      ],
+      "meta": {
+        "artist": "George Harrison",
+        "platform": "windows",
+        "ms_played": 231133,
+        "skipped": false
+      }
+    },
+    {
+      "id": "48db6e30e4",
+      "type": "place",
+      "timestamp": "2018-01-19T08:00:00",
+      "title": "Bhatpara",
+      "subtitle": "Kale-Chandra Pvt Ltd",
+      "amount": 2040.92,
+      "location": {
+        "lat": 30.100365,
+        "lng": -150.969181,
+        "city": "Bhatpara"
+      },
+      "tags": [
+        "entertainment"
+      ],
+      "meta": {
+        "job_context": "Manufacturing systems engineer"
+      }
+    },
+    {
+      "id": "5e01b13d74",
+      "type": "purchase",
+      "timestamp": "2018-01-19T22:22:37",
+      "title": "Cakes",
+      "subtitle": "Household / Kirana",
+      "amount": 46,
+      "tags": [
+        "household",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "1fc8f85713",
+      "type": "music",
+      "timestamp": "2018-01-19T23:12:34",
+      "title": "Happy",
+      "subtitle": "The Rolling Stones · Exile On Main Street",
+      "tags": [
+        "rock",
+        "late_night"
+      ],
+      "meta": {
+        "artist": "The Rolling Stones",
+        "platform": "android",
+        "ms_played": 178,
+        "skipped": false
+      }
+    },
+    {
+      "id": "d6b102d0ea",
+      "type": "music",
+      "timestamp": "2018-01-21T02:22:09",
+      "title": "Perfect",
+      "subtitle": "Ed Sheeran · ÷",
+      "tags": [
+        "late_night",
+        "ballad"
+      ],
+      "meta": {
+        "artist": "Ed Sheeran",
+        "platform": "android",
+        "ms_played": 1978,
+        "skipped": false
+      }
+    },
+    {
+      "id": "5bcc47e114",
+      "type": "purchase",
+      "timestamp": "2018-01-21T19:44:43",
+      "title": "Home Food Delivery",
+      "subtitle": "Food / Dinner",
+      "amount": 384,
+      "tags": [
+        "food",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "26e1de5cff",
+      "type": "place",
+      "timestamp": "2018-01-23T07:00:00",
+      "title": "Karawal Nagar",
+      "subtitle": "Chandran, Cheema and Sagar Pvt Ltd",
+      "amount": 8319.03,
+      "location": {
+        "lat": 49.572426,
+        "lng": 100.332894,
+        "city": "Karawal Nagar"
+      },
+      "tags": [
+        "online_shopping"
+      ],
+      "meta": {
+        "job_context": "Nurse, adult"
+      }
+    },
+    {
+      "id": "bd047fd1b0",
+      "type": "music",
+      "timestamp": "2018-01-24T05:27:20",
+      "title": "Bodysnatchers",
+      "subtitle": "Radiohead · In Rainbows",
+      "tags": [
+        "rock",
+        "morning"
+      ],
+      "meta": {
+        "artist": "Radiohead",
+        "platform": "android",
+        "ms_played": 2465,
+        "skipped": false
+      }
+    },
+    {
+      "id": "0036a67ea1",
+      "type": "music",
+      "timestamp": "2018-01-25T01:23:57",
+      "title": "Rip This Joint",
+      "subtitle": "The Rolling Stones · Exile On Main Street",
+      "tags": [
+        "late_night",
+        "rock"
+      ],
+      "meta": {
+        "artist": "The Rolling Stones",
+        "platform": "android",
+        "ms_played": 2495,
+        "skipped": false
+      }
+    },
+    {
+      "id": "a09bf9f9ec",
+      "type": "music",
+      "timestamp": "2018-01-25T16:47:48",
+      "title": "Down the Highway",
+      "subtitle": "Bob Dylan · The Freewheelin' Bob Dylan",
+      "tags": [
+        "folk"
+      ],
+      "meta": {
+        "artist": "Bob Dylan",
+        "platform": "android",
+        "ms_played": 204506,
+        "skipped": false
+      }
+    },
+    {
+      "id": "df3d70fa8a",
+      "type": "purchase",
+      "timestamp": "2018-01-26T12:37:47",
+      "title": "Pyjama (999)+ carry bag (10)",
+      "subtitle": "Apparel / Clothing",
+      "amount": 1009,
+      "tags": [
+        "apparel",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "8168d1a390",
+      "type": "music",
+      "timestamp": "2018-01-27T08:52:14",
+      "title": "Mr. Tambourine Man",
+      "subtitle": "Bob Dylan · Bringing It All Back Home",
+      "tags": [
+        "folk"
+      ],
+      "meta": {
+        "artist": "Bob Dylan",
+        "platform": "android",
+        "ms_played": 261487,
+        "skipped": false
+      }
+    },
+    {
+      "id": "fb1502ef44",
+      "type": "purchase",
+      "timestamp": "2018-01-27T18:15:53",
+      "title": "Two Wheeler Bikedelux third installment",
+      "subtitle": "Transportation / Bike",
+      "amount": 43000,
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Saving Bank account 1",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "fe6ce05b46",
+      "type": "music",
+      "timestamp": "2018-01-28T06:01:04",
+      "title": "Maggie's Farm",
+      "subtitle": "Bob Dylan · Bringing It All Back Home",
+      "tags": [
+        "folk"
+      ],
+      "meta": {
+        "artist": "Bob Dylan",
+        "platform": "android",
+        "ms_played": 1495,
+        "skipped": false
+      }
+    },
+    {
+      "id": "c9f10dfbf0",
+      "type": "place",
+      "timestamp": "2018-01-28T07:00:00",
+      "title": "Chandigarh",
+      "subtitle": "Maharaj LLC Pvt Ltd",
+      "amount": 7637.41,
+      "location": {
+        "lat": -64.351889,
+        "lng": -83.657905,
+        "city": "Chandigarh"
+      },
+      "tags": [
+        "online_shopping"
+      ],
+      "meta": {
+        "job_context": "Surveyor"
+      }
+    },
+    {
+      "id": "139574f720",
+      "type": "music",
+      "timestamp": "2018-01-29T00:03:57",
+      "title": "The Times They Are A-Changin'",
+      "subtitle": "Bob Dylan · The Times They Are A-Changin'",
+      "tags": [
+        "late_night",
+        "folk"
+      ],
+      "meta": {
+        "artist": "Bob Dylan",
+        "platform": "android",
+        "ms_played": 192053,
+        "skipped": false
+      }
+    },
+    {
+      "id": "36b827bab3",
+      "type": "music",
+      "timestamp": "2018-01-29T05:11:14",
+      "title": "Swallowed in the Sea",
+      "subtitle": "Coldplay · X&Y",
+      "tags": [
+        "rock"
+      ],
+      "meta": {
+        "artist": "Coldplay",
+        "platform": "android",
+        "ms_played": 669,
+        "skipped": false
+      }
+    },
+    {
+      "id": "da953fc0ba",
+      "type": "music",
+      "timestamp": "2018-01-29T05:14:54",
+      "title": "Starlight",
+      "subtitle": "Muse · Black Holes and Revelations",
+      "tags": [
+        "rock"
+      ],
+      "meta": {
+        "artist": "Muse",
+        "platform": "android",
+        "ms_played": 4237,
+        "skipped": false
+      }
+    },
+    {
+      "id": "7441d14123",
+      "type": "purchase",
+      "timestamp": "2018-01-31T08:21:09",
+      "title": "From workplace",
+      "subtitle": "Salary / Monthly",
+      "amount": 64636,
+      "tags": [
+        "salary",
+        "income"
+      ],
+      "meta": {
+        "mode": "Saving Bank account 1",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "7c056efc66",
+      "type": "place",
+      "timestamp": "2018-02-01T04:00:00",
+      "title": "Jamalpur",
+      "subtitle": "Bassi, Chaudhary and Bahl Pvt Ltd",
+      "amount": 7293.76,
+      "location": {
+        "lat": 64.554245,
+        "lng": -60.030499,
+        "city": "Jamalpur"
+      },
+      "tags": [
+        "travel"
+      ],
+      "meta": {
+        "job_context": null
+      }
+    },
+    {
+      "id": "36d99839fa",
+      "type": "music",
+      "timestamp": "2018-02-01T06:17:53",
+      "title": "Say",
+      "subtitle": "John Mayer · Say",
+      "tags": [
+        "acoustic"
+      ],
+      "meta": {
+        "artist": "John Mayer",
+        "platform": "android",
+        "ms_played": 4069,
+        "skipped": false
+      }
+    },
+    {
+      "id": "5e4ec62b15",
+      "type": "music",
+      "timestamp": "2018-02-02T03:27:02",
+      "title": "Octopus's Garden - Remastered 2009",
+      "subtitle": "The Beatles · Abbey Road",
+      "tags": [
+        "late_night",
+        "classic"
+      ],
+      "meta": {
+        "artist": "The Beatles",
+        "platform": "android",
+        "ms_played": 2226,
+        "skipped": false
+      }
+    },
+    {
+      "id": "5860659127",
+      "type": "music",
+      "timestamp": "2018-02-06T02:03:20",
+      "title": "I'm Gonna Be (500 Miles)",
+      "subtitle": "The Proclaimers · Finest",
+      "tags": [
+        "late_night"
+      ],
+      "meta": {
+        "artist": "The Proclaimers",
+        "platform": "android",
+        "ms_played": 2877,
+        "skipped": false
+      }
+    },
+    {
+      "id": "44b1cf7f4b",
+      "type": "place",
+      "timestamp": "2018-02-06T23:00:00",
+      "title": "Bidar",
+      "subtitle": "Raju LLC Pvt Ltd",
+      "amount": 1842.24,
+      "location": {
+        "lat": 67.267524,
+        "lng": 126.478933,
+        "city": "Bidar"
+      },
+      "tags": [
+        "fitness_and_medical"
+      ],
+      "meta": {
+        "job_context": "Community development"
+      }
+    },
+    {
+      "id": "ec149cce4b",
+      "type": "music",
+      "timestamp": "2018-02-08T04:32:07",
+      "title": "Up Around The Bend",
+      "subtitle": "Creedence Clearwater Revival · Cosmo's Factory",
+      "tags": [
+        "late_night",
+        "rock"
+      ],
+      "meta": {
+        "artist": "Creedence Clearwater Revival",
+        "platform": "android",
+        "ms_played": 123284,
+        "skipped": false
+      }
+    },
+    {
+      "id": "ed58b7a80c",
+      "type": "music",
+      "timestamp": "2018-02-10T03:51:33",
+      "title": "The Way You Look Tonight",
+      "subtitle": "Frank Sinatra · Ultimate Sinatra",
+      "tags": [
+        "late_night",
+        "vocal"
+      ],
+      "meta": {
+        "artist": "Frank Sinatra",
+        "platform": "android",
+        "ms_played": 201200,
+        "skipped": false
+      }
+    },
+    {
+      "id": "cdd7b9b08d",
+      "type": "music",
+      "timestamp": "2018-02-10T08:32:15",
+      "title": "Folsom Prison Blues",
+      "subtitle": "Johnny Cash · At San Quentin",
+      "tags": [
+        "country"
+      ],
+      "meta": {
+        "artist": "Johnny Cash",
+        "platform": "android",
+        "ms_played": 89373,
+        "skipped": false
+      }
+    },
+    {
+      "id": "abac0012ca",
+      "type": "music",
+      "timestamp": "2018-02-12T03:14:40",
+      "title": "Stubborn Love",
+      "subtitle": "The Lumineers · The Lumineers",
+      "tags": [
+        "late_night",
+        "folk"
+      ],
+      "meta": {
+        "artist": "The Lumineers",
+        "platform": "android",
+        "ms_played": 277333,
+        "skipped": false
+      }
+    },
+    {
+      "id": "d012de5310",
+      "type": "music",
+      "timestamp": "2018-02-13T03:57:19",
+      "title": "Whatever It Takes",
+      "subtitle": "Lifehouse · Who We Are",
+      "tags": [
+        "late_night",
+        "rock"
+      ],
+      "meta": {
+        "artist": "Lifehouse",
+        "platform": "android",
+        "ms_played": 2167,
+        "skipped": false
+      }
+    },
+    {
+      "id": "f5391b51ef",
+      "type": "place",
+      "timestamp": "2018-02-15T21:00:00",
+      "title": "Vasai-Virar",
+      "subtitle": "Suburban Gateway",
+      "amount": 9230.22,
+      "location": {
+        "lat": 19.47,
+        "lng": 72.8,
+        "city": "Vasai-Virar"
+      },
+      "tags": [
+        "travel"
+      ],
+      "meta": {
+        "job_context": null
+      }
+    },
+    {
+      "id": "ec037bf069",
+      "type": "music",
+      "timestamp": "2018-02-16T00:02:28",
+      "title": "Yesterday",
+      "subtitle": "Imagine Dragons · Evolve",
+      "tags": [
+        "late_night",
+        "rock"
+      ],
+      "meta": {
+        "artist": "Imagine Dragons",
+        "platform": "android",
+        "ms_played": 110548,
+        "skipped": false
+      }
+    },
+    {
+      "id": "69581f7dda",
+      "type": "music",
+      "timestamp": "2018-02-17T21:25:46",
+      "title": "Something Like Olivia",
+      "subtitle": "John Mayer · Born and Raised",
+      "tags": [
+        "blues",
+        "acoustic"
+      ],
+      "meta": {
+        "artist": "John Mayer",
+        "platform": "android",
+        "ms_played": 180626,
+        "skipped": false
+      }
+    },
+    {
+      "id": "81daa0d3fc",
+      "type": "purchase",
+      "timestamp": "2018-02-17T23:10:32",
+      "title": "clothes",
+      "subtitle": "Family / clothes",
+      "amount": 3598,
+      "tags": [
+        "family",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "dc47ac955f",
+      "type": "purchase",
+      "timestamp": "2018-02-17T23:12:28",
+      "title": "BBQ",
+      "subtitle": "Food / Dinner",
+      "amount": 1783,
+      "tags": [
+        "food",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "0055973a4a",
+      "type": "place",
+      "timestamp": "2018-02-20T23:00:00",
+      "title": "Jodhpur",
+      "subtitle": "Chaudhari LLC Pvt Ltd",
+      "amount": 8888.46,
+      "location": {
+        "lat": 26.2389,
+        "lng": 73.0243,
+        "city": "Jodhpur"
+      },
+      "tags": [
+        "travel"
+      ],
+      "meta": {
+        "job_context": "Industrial buyer"
+      }
+    },
+    {
+      "id": "33aa37e80f",
+      "type": "purchase",
+      "timestamp": "2018-03-23T19:48:39",
+      "title": "Finding next Job",
+      "subtitle": "Culture / Books",
+      "amount": 100,
+      "tags": [
+        "culture",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "c3792c5ce9",
+      "type": "music",
+      "timestamp": "2018-03-24T01:28:47",
+      "title": "Man in Black",
+      "subtitle": "Johnny Cash · Man In Black",
+      "tags": [
+        "late_night",
+        "country"
+      ],
+      "meta": {
+        "artist": "Johnny Cash",
+        "platform": "android",
+        "ms_played": 172986,
+        "skipped": false
+      }
+    },
+    {
+      "id": "af1c1b4c74",
+      "type": "place",
+      "timestamp": "2018-03-24T02:00:00",
+      "title": "Ajmer",
+      "subtitle": "Sahota and Sons Pvt Ltd",
+      "amount": 5918.61,
+      "location": {
+        "lat": 26.4499,
+        "lng": 74.6399,
+        "city": "Ajmer"
+      },
+      "tags": [
+        "fitness_and_medical",
+        "travel"
+      ],
+      "meta": {
+        "job_context": null
+      }
+    },
+    {
+      "id": "673e3a04fd",
+      "type": "purchase",
+      "timestamp": "2018-06-27T21:32:27",
+      "title": "Planetarium",
+      "subtitle": "Tourism / Entry Fees",
+      "amount": 308.85,
+      "location": {
+        "lat": 18.989,
+        "lng": 72.818,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "tourism",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Credit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "03e95cb311",
+      "type": "purchase",
+      "timestamp": "2018-06-28T15:06:59",
+      "title": "Vadala road to Nehru Planetarium",
+      "subtitle": "Transportation / Taxi",
+      "amount": 228,
+      "location": {
+        "lat": 18.989,
+        "lng": 72.818,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "transportation",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Cash",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "355a7234bd",
+      "type": "purchase",
+      "timestamp": "2018-07-28T23:42:57",
+      "title": "2 INOX Movie Tickets",
+      "subtitle": "Culture / Movie",
+      "amount": 481.36,
+      "location": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "culture",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Debit Card",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "mv_inception_01",
+      "type": "movie",
+      "timestamp": "2018-07-28T23:55:00",
+      "title": "Inception (Late Night Screening)",
+      "subtitle": "INOX Cinema · Screen 3",
+      "amount": null,
+      "location": {
+        "lat": 19.076,
+        "lng": 72.8777,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "culture",
+        "late_night"
+      ],
+      "meta": {
+        "director": "Christopher Nolan",
+        "rating": "PG-13"
+      }
+    },
+    {
+      "id": "ph_planetarium_01",
+      "type": "photo",
+      "timestamp": "2018-06-27T22:15:00",
+      "title": "Constellation Projection Dome",
+      "subtitle": "Nehru Planetarium",
+      "amount": null,
+      "location": {
+        "lat": 18.989,
+        "lng": 72.818,
+        "city": "Mumbai"
+      },
+      "tags": [
+        "tourism",
+        "astronomy"
+      ],
+      "meta": {
+        "device": "Android Phone",
+        "resolution": "4032x3024"
+      }
+    },
+    {
+      "id": "nt_astronomy_01",
+      "type": "note",
+      "timestamp": "2018-06-28T01:10:00",
+      "title": "Thoughts on orbital mechanics",
+      "subtitle": "Midnight Journal Entry",
+      "amount": null,
+      "tags": [
+        "late_night",
+        "astronomy",
+        "reflection"
+      ],
+      "meta": {
+        "word_count": 142
+      }
+    },
+    {
+      "id": "a1c9b28115",
+      "type": "purchase",
+      "timestamp": "2018-05-15T20:10:10",
+      "title": "LG Washing Machine",
+      "subtitle": "Household / Appliances",
+      "amount": 21500,
+      "tags": [
+        "household",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Saving Bank account 1",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "078ef81e7f",
+      "type": "purchase",
+      "timestamp": "2018-06-26T17:25:23",
+      "title": "Aquaguard water purifier",
+      "subtitle": "Household / Appliances",
+      "amount": 13050,
+      "tags": [
+        "household",
+        "expense"
+      ],
+      "meta": {
+        "mode": "Saving Bank account 1",
+        "currency": "INR"
+      }
+    },
+    {
+      "id": "5e4ec62b16",
+      "type": "music",
+      "timestamp": "2018-08-29T02:29:15",
+      "title": "I'm A Loser - Remastered 2009",
+      "subtitle": "The Beatles · Beatles For Sale",
+      "tags": [
+        "late_night",
+        "classic"
+      ],
+      "meta": {
+        "artist": "The Beatles",
+        "platform": "windows",
+        "ms_played": 150026,
+        "skipped": false
+      }
+    },
+    {
+      "id": "37f3638096",
+      "type": "music",
+      "timestamp": "2018-08-31T23:43:24",
+      "title": "I Will - Remastered 2009",
+      "subtitle": "The Beatles · The Beatles",
+      "tags": [
+        "late_night",
+        "classic"
+      ],
+      "meta": {
+        "artist": "The Beatles",
+        "platform": "android",
+        "ms_played": 105933,
+        "skipped": false
+      }
+    },
+    {
+      "id": "14b4684bd7",
+      "type": "music",
+      "timestamp": "2018-09-09T10:16:52",
+      "title": "Hand In Hand",
+      "subtitle": "Paul McCartney · Egypt Station",
+      "tags": [
+        "rock"
+      ],
+      "meta": {
+        "artist": "Paul McCartney",
+        "platform": "android",
+        "ms_played": 1230,
+        "skipped": false
+      }
+    },
+    {
+      "id": "13fcdcb478",
+      "type": "music",
+      "timestamp": "2018-09-10T22:59:39",
+      "title": "No Words - Remastered 2010",
+      "subtitle": "Paul McCartney · Band On The Run",
+      "tags": [
+        "rock"
+      ],
+      "meta": {
+        "artist": "Paul McCartney",
+        "platform": "android",
+        "ms_played": 91818,
+        "skipped": false
+      }
+    },
+    {
+      "id": "e7dc517dc8",
+      "type": "music",
+      "timestamp": "2018-11-01T18:25:49",
+      "title": "Band On The Run - 2010 Remaster",
+      "subtitle": "Paul McCartney · Band On The Run",
+      "tags": [
+        "rock"
+      ],
+      "meta": {
+        "artist": "Paul McCartney",
+        "platform": "android",
+        "ms_played": 313026,
+        "skipped": false
+      }
+    },
+    {
+      "id": "a505ce4a5c",
+      "type": "music",
+      "timestamp": "2018-11-02T00:13:56",
+      "title": "The Lovely Linda - Remastered 2011",
+      "subtitle": "Paul McCartney · McCartney",
+      "tags": [
+        "late_night"
+      ],
+      "meta": {
+        "artist": "Paul McCartney",
+        "platform": "android",
+        "ms_played": 44413,
+        "skipped": false
+      }
+    },
+    {
+      "id": "52de5fa82b",
+      "type": "music",
+      "timestamp": "2018-11-02T00:32:33",
+      "title": "Oo You - Remastered 2011",
+      "subtitle": "Paul McCartney · McCartney",
+      "tags": [
+        "late_night"
+      ],
+      "meta": {
+        "artist": "Paul McCartney",
+        "platform": "android",
+        "ms_played": 169733,
+        "skipped": false
+      }
+    },
+    {
+      "id": "f83b28e7b6",
+      "type": "music",
+      "timestamp": "2018-11-03T22:40:42",
+      "title": "Remember - Remastered 2010",
+      "subtitle": "John Lennon · Plastic Ono Band",
+      "tags": [
+        "classic"
+      ],
+      "meta": {
+        "artist": "John Lennon",
+        "platform": "android",
+        "ms_played": 272960,
+        "skipped": false
+      }
+    },
+    {
+      "id": "eac4770761",
+      "type": "music",
+      "timestamp": "2018-12-09T01:56:31",
+      "title": "Tightrope",
+      "subtitle": "Michelle Williams · The Greatest Showman",
+      "tags": [
+        "late_night",
+        "soundtrack"
+      ],
+      "meta": {
+        "artist": "Michelle Williams",
+        "platform": "android",
+        "ms_played": 3721,
+        "skipped": false
+      }
+    },
+    {
+      "id": "266c26fe52",
+      "type": "music",
+      "timestamp": "2018-12-10T04:44:27",
+      "title": "A Hard Rain's A-Gonna Fall",
+      "subtitle": "Bob Dylan · The Freewheelin' Bob Dylan",
+      "tags": [
+        "late_night",
+        "folk"
+      ],
+      "meta": {
+        "artist": "Bob Dylan",
+        "platform": "android",
+        "ms_played": 183413,
+        "skipped": false
+      }
+    },
+    {
+      "id": "29dbab1f16",
+      "type": "place",
+      "timestamp": "2018-12-27T11:00:00",
+      "title": "Proddatur",
+      "subtitle": "Kalita, Kapadia and Chakrabarti Pvt Ltd",
+      "amount": 4906.35,
+      "location": {
+        "lat": -32.3018,
+        "lng": 87.264305,
+        "city": "Proddatur"
+      },
+      "tags": [
+        "entertainment",
+        "travel"
+      ],
+      "meta": {
+        "job_context": "Geophysicist"
+      }
+    }
+  ]
+}
