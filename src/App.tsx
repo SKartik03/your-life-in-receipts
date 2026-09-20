@@ -37,7 +37,7 @@ export function App() {
         setCurrentPreset('custom');
         setActiveTab('chapters');
         soundEngine.playChime([523.25, 659.25, 783.99]);
-      } catch (err) {
+      } catch {
         alert('Invalid JSON file format. Please upload a valid JSON dataset.');
       }
     };

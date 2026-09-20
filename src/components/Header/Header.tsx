@@ -125,6 +125,7 @@ export const Header: React.FC<HeaderProps> = ({
             return (
               <button
                 key={tab.id}
+                aria-current={isActive ? 'page' : undefined}
                 onClick={() => {
                   soundEngine.playChime([783.99, 1046.5]);
                   setActiveTab(tab.id);
@@ -160,6 +161,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Dataset Selector Dropdown */}
           <select
             value={currentPreset}
+            aria-label="Switch dataset"
             onChange={(e) => {
               const val = e.target.value;
               if (val === 'upload') {
@@ -197,6 +199,8 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Ambience Audio Toggle */}
           <button
             onClick={handleToggleSound}
+            aria-label={isPlayingAudio ? 'Mute celestial synthesizer' : 'Enable ambient celestial soundscape'}
+            aria-pressed={isPlayingAudio}
             title={isPlayingAudio ? 'Mute celestial synthesizer' : 'Enable ambient celestial soundscape'}
             style={{
               display: 'flex',

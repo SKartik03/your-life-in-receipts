@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import type { Receipt, ReceiptType } from '../../types';
 import { Search, MapPin, Calendar, ArrowRight, CornerDownRight, X } from 'lucide-react';
+import { clickableA11yProps } from '../../utils/a11y';
 
 interface ReceiptExplorerProps {
   receipts: Receipt[];
@@ -57,8 +58,8 @@ export const ReceiptExplorer: React.FC<ReceiptExplorerProps> = ({
   }, [receipts, selectedType, selectedTag, searchQuery, sortOrder]);
 
   // Jump to a related receipt smoothly
-  const handleJumpToReceipt = (targetId: string, e: React.MouseEvent) => {
-    e.stopPropagation();
+  const handleJumpToReceipt = (targetId: string, e?: React.MouseEvent | React.KeyboardEvent) => {
+    if (e) e.stopPropagation();
     const target = receiptMap.get(targetId);
     if (target) {
       const el = document.getElementById(`receipt-card-${targetId}`);
@@ -158,6 +159,7 @@ export const ReceiptExplorer: React.FC<ReceiptExplorerProps> = ({
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
+                  aria-label="Clear search"
                   style={{
                     position: 'absolute',
                     right: '12px',
@@ -329,6 +331,7 @@ export const ReceiptExplorer: React.FC<ReceiptExplorerProps> = ({
                 id={`receipt-card-${receipt.id}`}
                 className="glass-panel"
                 onClick={() => onSelectReceipt(receipt)}
+                {...clickableA11yProps(() => onSelectReceipt(receipt), `View moment: ${receipt.title}`)}
                 style={{
                   padding: '20px',
                   display: 'flex',
@@ -478,6 +481,11 @@ export const ReceiptExplorer: React.FC<ReceiptExplorerProps> = ({
                           <div
                             key={relId}
                             onClick={(e) => handleJumpToReceipt(relId, e)}
+                            {...clickableA11yProps(
+                              () => handleJumpToReceipt(relId),
+                              `Jump to related ${target.type}: ${target.title}`,
+                              true
+                            )}
                             title={`Jump to ${target.title} (${target.type})`}
                             style={{
                               display: 'flex',

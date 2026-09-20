@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import type { Receipt } from '../../types';
 import { computeReceiptLinkScore } from '../../engine/crossTypeLinker';
 import { X, Sparkles, MapPin, ArrowRight } from 'lucide-react';
+import { clickableA11yProps, useFocusTrap } from '../../utils/a11y';
 
 interface MomentModalProps {
   receipt: Receipt | null;
@@ -16,6 +17,8 @@ export const MomentModal: React.FC<MomentModalProps> = ({
   onClose,
   onSelectReceipt,
 }) => {
+  const focusTrapRef = useFocusTrap(receipt !== null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -60,6 +63,11 @@ export const MomentModal: React.FC<MomentModalProps> = ({
       onClick={onClose}
     >
       <div
+        ref={focusTrapRef}
+        role="dialog"
+        aria-modal="true"
+        tabIndex={-1}
+        aria-label={receipt ? `Moment detail: ${receipt.title}` : 'Moment detail'}
         className="glass-panel"
         style={{
           width: '100%',
@@ -76,6 +84,7 @@ export const MomentModal: React.FC<MomentModalProps> = ({
         {/* Close button */}
         <button
           onClick={onClose}
+          aria-label="Close moment view"
           style={{
             position: 'absolute',
             top: '20px',
@@ -294,6 +303,10 @@ export const MomentModal: React.FC<MomentModalProps> = ({
                   <div
                     key={sat.id}
                     onClick={() => onSelectReceipt(sat)}
+                    {...clickableA11yProps(
+                      () => onSelectReceipt(sat),
+                      `Pivot focus to ${sat.type}: ${sat.title}`
+                    )}
                     style={{
                       padding: '18px',
                       borderRadius: 'var(--radius-md)',

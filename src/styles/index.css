@@ -18,11 +18,11 @@
   --border-medium: rgba(255, 255, 255, 0.15);
   --border-bright: rgba(255, 255, 255, 0.3);
 
-  /* Typography */
+  /* Typography & Contrast Compliant Palette (WCAG AA > 4.5:1) */
   --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-faint: #64748b;
+  --text-secondary: #dbe4ee;
+  --text-muted: #a8b8cc;
+  --text-faint: #8295ab;
 
   /* Constellation Type Glows */
   --color-music: #c084fc;

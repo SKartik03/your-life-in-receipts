@@ -27,7 +27,7 @@ console.log('Receipt Types Present:', Array.from(types).join(', '));
 
 console.log('\n--- 2. Testing Cross-Type Linking Logic ---');
 // Let's verify linking across types
-let crossTypeOnly = true;
+let _crossTypeOnly = true;
 let totalLinks = 0;
 // Test sample links
 for (let i = 0; i < Math.min(10, rawReceipts.length); i++) {

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { InsightPattern, Receipt } from '../../types';
 import { Lightbulb, Clock, ArrowRight, X, CheckCircle2 } from 'lucide-react';
+import { clickableA11yProps, useFocusTrap } from '../../utils/a11y';
 
 interface InsightCardsProps {
   patterns: InsightPattern[];
@@ -14,6 +15,18 @@ export const InsightCards: React.FC<InsightCardsProps> = ({
   onSelectReceipt,
 }) => {
   const [activeStoryPattern, setActiveStoryPattern] = useState<InsightPattern | null>(null);
+  const focusTrapRef = useFocusTrap(activeStoryPattern !== null);
+
+  useEffect(() => {
+    if (!activeStoryPattern) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveStoryPattern(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeStoryPattern]);
 
   if (patterns.length === 0) return null;
 
@@ -67,6 +80,7 @@ export const InsightCards: React.FC<InsightCardsProps> = ({
                 key={pat.id}
                 className="glass-panel"
                 onClick={() => setActiveStoryPattern(pat)}
+                {...clickableA11yProps(() => setActiveStoryPattern(pat), `View story for pattern: ${pat.name}`)}
                 style={{
                   padding: '24px',
                   display: 'flex',
@@ -214,6 +228,11 @@ export const InsightCards: React.FC<InsightCardsProps> = ({
             onClick={() => setActiveStoryPattern(null)}
           >
             <div
+              ref={focusTrapRef}
+              role="dialog"
+              aria-modal="true"
+              tabIndex={-1}
+              aria-label={`Story: ${activeStoryPattern.name}`}
               className="glass-panel"
               style={{
                 width: '100%',
@@ -230,6 +249,7 @@ export const InsightCards: React.FC<InsightCardsProps> = ({
               {/* Close Button */}
               <button
                 onClick={() => setActiveStoryPattern(null)}
+                aria-label="Close pattern story view"
                 style={{
                   position: 'absolute',
                   top: '20px',
@@ -325,6 +345,13 @@ export const InsightCards: React.FC<InsightCardsProps> = ({
                           setActiveStoryPattern(null);
                           onSelectReceipt(r);
                         }}
+                        {...clickableA11yProps(
+                          () => {
+                            setActiveStoryPattern(null);
+                            onSelectReceipt(r);
+                          },
+                          `View evidence receipt: ${r.title}`
+                        )}
                         style={{
                           position: 'relative',
                           padding: '16px',

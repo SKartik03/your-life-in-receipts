@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { Chapter, Receipt } from '../../types';
 import { Compass, Sparkles, Calendar, ChevronRight } from 'lucide-react';
+import { clickableA11yProps } from '../../utils/a11y';
 
 interface ChapterConstellationProps {
   chapters: Chapter[];
@@ -128,6 +129,7 @@ export const ChapterConstellation: React.FC<ChapterConstellationProps> = ({
                 <div
                   key={ch.id}
                   onClick={() => setSelectedChapter(ch)}
+                  {...clickableA11yProps(() => setSelectedChapter(ch), `Select chapter ${idx + 1}: ${ch.title}`)}
                   onMouseEnter={() => setHoveredChapterId(ch.id)}
                   onMouseLeave={() => setHoveredChapterId(null)}
                   style={{
@@ -222,6 +224,7 @@ export const ChapterConstellation: React.FC<ChapterConstellationProps> = ({
               <div
                 key={ch.id}
                 onClick={() => setSelectedChapter(ch)}
+                {...clickableA11yProps(() => setSelectedChapter(ch), `Select chapter ${idx + 1}: ${ch.title}`)}
                 style={{
                   padding: '16px',
                   borderRadius: 'var(--radius-md)',
@@ -408,6 +411,7 @@ export const ChapterConstellation: React.FC<ChapterConstellationProps> = ({
                     <div
                       key={id}
                       onClick={() => onSelectReceipt(receipt)}
+                      {...clickableA11yProps(() => onSelectReceipt(receipt), `View moment: ${receipt.title}`)}
                       style={{
                         padding: '14px',
                         borderRadius: 'var(--radius-md)',
