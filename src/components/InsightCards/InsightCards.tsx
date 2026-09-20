@@ -69,11 +69,7 @@ export const InsightCards: React.FC<InsightCardsProps> = ({
         </div>
 
         {/* Pattern Cards Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-          gap: '20px',
-        }}>
+        <div className="grid-responsive-cards">
           {patterns.map((pat) => {
             return (
               <div
@@ -211,20 +207,7 @@ export const InsightCards: React.FC<InsightCardsProps> = ({
         {/* ------------------------------------------------------------- */}
         {activeStoryPattern && (
           <div
-            style={{
-              position: 'fixed',
-              top: 0,
-              left: 0,
-              width: '100vw',
-              height: '100vh',
-              background: 'rgba(5, 7, 15, 0.88)',
-              backdropFilter: 'blur(24px)',
-              zIndex: 200,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '24px',
-            }}
+            className="modal-overlay"
             onClick={() => setActiveStoryPattern(null)}
           >
             <div
@@ -233,17 +216,7 @@ export const InsightCards: React.FC<InsightCardsProps> = ({
               aria-modal="true"
               tabIndex={-1}
               aria-label={`Story: ${activeStoryPattern.name}`}
-              className="glass-panel"
-              style={{
-                width: '100%',
-                maxWidth: '780px',
-                maxHeight: '90vh',
-                overflowY: 'auto',
-                padding: '36px',
-                background: 'linear-gradient(135deg, rgba(15, 22, 43, 0.98), rgba(7, 9, 19, 0.98))',
-                border: '1px solid rgba(245, 158, 11, 0.35)',
-                position: 'relative',
-              }}
+              className="modal-dialog glass-panel"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}

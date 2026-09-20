@@ -46,20 +46,7 @@ export const MomentModal: React.FC<MomentModalProps> = ({
 
   return (
     <div
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        background: 'rgba(5, 7, 15, 0.9)',
-        backdropFilter: 'blur(25px)',
-        zIndex: 300,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '24px',
-      }}
+      className="modal-overlay"
       onClick={onClose}
     >
       <div
@@ -68,17 +55,7 @@ export const MomentModal: React.FC<MomentModalProps> = ({
         aria-modal="true"
         tabIndex={-1}
         aria-label={receipt ? `Moment detail: ${receipt.title}` : 'Moment detail'}
-        className="glass-panel"
-        style={{
-          width: '100%',
-          maxWidth: '920px',
-          maxHeight: '92vh',
-          overflowY: 'auto',
-          padding: '36px',
-          background: 'linear-gradient(135deg, rgba(15, 22, 43, 0.98), rgba(7, 9, 19, 0.98))',
-          border: '1px solid rgba(56, 189, 248, 0.35)',
-          position: 'relative',
-        }}
+        className="modal-dialog glass-panel"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}

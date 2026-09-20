@@ -105,15 +105,18 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Navigation Tabs */}
-        <nav style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '4px',
-          background: 'rgba(15, 22, 43, 0.6)',
-          padding: '4px',
-          borderRadius: 'var(--radius-full)',
-          border: '1px solid var(--border-subtle)',
-        }}>
+        <nav
+          className="header-nav-scroll"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            background: 'rgba(15, 22, 43, 0.6)',
+            padding: '4px',
+            borderRadius: 'var(--radius-full)',
+            border: '1px solid var(--border-subtle)',
+          }}
+        >
           {[
             { id: 'chapters', label: 'Life Chapters', icon: Compass },
             { id: 'insights', label: 'Named Patterns', icon: Lightbulb },

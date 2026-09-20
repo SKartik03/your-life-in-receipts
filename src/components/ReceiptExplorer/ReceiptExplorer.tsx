@@ -308,11 +308,7 @@ export const ReceiptExplorer: React.FC<ReceiptExplorerProps> = ({
         </div>
 
         {/* Receipt Cards Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-          gap: '18px',
-        }}>
+        <div className="grid-responsive-cards">
           {filteredReceipts.map((receipt) => {
             const isHighlighted = highlightedReceiptId === receipt.id;
             const dateStr = new Date(receipt.timestamp).toLocaleDateString('en-US', {

@@ -93,12 +93,14 @@ export const LandingHook: React.FC<LandingHookProps> = ({
           </p>
 
           {/* Stat Chips (The "Wow" landing cards) */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '16px',
-            marginBottom: '36px',
-          }}>
+          <div
+            className="grid-responsive-stats"
+            style={{
+              display: 'grid',
+              gap: '16px',
+              marginBottom: '36px',
+            }}
+          >
             {synthesis.statChips.map((chip, idx) => {
               const Icon = ICON_MAP[chip.icon] || Sparkles;
               return (
