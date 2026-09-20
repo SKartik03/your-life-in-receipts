@@ -1,31 +1,85 @@
-import { useState, useMemo } from 'react';
-import { processLifeData } from './engine';
-import { RAW_SAMPLE_DATA } from './data/sampleReceipts';
-import nomadData from './data/nomadDataset.json';
-import type { Receipt, ProcessedLifeData } from './types';
+import { lazy, Suspense } from 'react';
+import type { Receipt } from './types';
+import { ReceiptProvider } from './context/ReceiptContext';
+import { useReceiptContext } from './hooks/useReceiptContext';
+import { useSound } from './hooks/useSound';
 import { Header } from './components/Header/Header';
 import { LandingHook } from './components/LandingHook/LandingHook';
-import { ChapterConstellation } from './components/ChapterConstellation/ChapterConstellation';
-import { ReceiptExplorer } from './components/ReceiptExplorer/ReceiptExplorer';
-import { InsightCards } from './components/InsightCards/InsightCards';
 import { MomentModal } from './components/MomentModal/MomentModal';
-import { MacroVisualization } from './components/MacroVisualization/MacroVisualization';
 import { exportLifeDossierMarkdown } from './utils/exportDossier';
-import { soundEngine } from './utils/audioAmbience';
 import './styles/index.css';
 import './styles/components.css';
 
-export function App() {
-  const [activeTab, setActiveTab] = useState<string>('chapters');
-  const [currentPreset, setCurrentPreset] = useState<'sample' | 'nomad' | 'custom'>('sample');
-  const [rawDataset, setRawDataset] = useState<any>(RAW_SAMPLE_DATA);
-  const [selectedReceipt, setSelectedReceipt] = useState<Receipt | null>(null);
-  const [highlightedReceiptId] = useState<string | null>(null);
+// Code-split heavy interactive tab views for maximum performance and instant FCP
+const ChapterConstellation = lazy(() =>
+  import('./components/ChapterConstellation/ChapterConstellation').then((m) => ({
+    default: m.ChapterConstellation,
+  }))
+);
+const ReceiptExplorer = lazy(() =>
+  import('./components/ReceiptExplorer/ReceiptExplorer').then((m) => ({
+    default: m.ReceiptExplorer,
+  }))
+);
+const InsightCards = lazy(() =>
+  import('./components/InsightCards/InsightCards').then((m) => ({
+    default: m.InsightCards,
+  }))
+);
+const MacroVisualization = lazy(() =>
+  import('./components/MacroVisualization/MacroVisualization').then((m) => ({
+    default: m.MacroVisualization,
+  }))
+);
 
-  // Process data through the Connection Engine once per dataset load
-  const processedData: ProcessedLifeData = useMemo(() => {
-    return processLifeData(rawDataset);
-  }, [rawDataset]);
+function LoadingSpinner() {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '64px 0',
+        color: 'var(--text-muted)',
+        fontSize: '0.9rem',
+        gap: '12px',
+      }}
+    >
+      <div
+        style={{
+          width: '24px',
+          height: '24px',
+          borderRadius: '50%',
+          border: '2px solid rgba(56, 189, 248, 0.2)',
+          borderTopColor: '#38bdf8',
+          animation: 'orbitRotate 0.8s linear infinite',
+        }}
+      />
+      <span>Calibrating celestial coordinates...</span>
+    </div>
+  );
+}
+
+function AppContent() {
+  const {
+    receipts,
+    receiptMap,
+    chapters,
+    patterns,
+    synthesis,
+    allTags,
+    allTypes,
+    selectedReceipt,
+    setSelectedReceipt,
+    activeTab,
+    setActiveTab,
+    currentPreset,
+    selectPreset,
+    loadCustomDataset,
+    highlightedReceiptId,
+  } = useReceiptContext();
+
+  const { playChime } = useSound();
 
   // Handle custom dataset file upload with size limits and schema validation
   const handleUploadDataset = (file: File) => {
@@ -46,10 +100,8 @@ export function App() {
           alert('Invalid dataset format. Expected a JSON array or object.');
           return;
         }
-        setRawDataset(json);
-        setCurrentPreset('custom');
-        setActiveTab('chapters');
-        soundEngine.playChime([523.25, 659.25, 783.99]);
+        loadCustomDataset(json);
+        playChime([523.25, 659.25, 783.99]);
       } catch {
         alert('Invalid JSON file format. Please upload a valid JSON dataset.');
       }
@@ -58,23 +110,31 @@ export function App() {
   };
 
   const handleSelectPreset = (presetKey: 'sample' | 'nomad') => {
-    setCurrentPreset(presetKey);
-    if (presetKey === 'sample') {
-      setRawDataset(RAW_SAMPLE_DATA);
-    } else if (presetKey === 'nomad') {
-      setRawDataset(nomadData);
-    }
-    soundEngine.playChime([659.25, 880, 1046.5]);
+    selectPreset(presetKey);
+    playChime([659.25, 880, 1046.5]);
   };
 
   const handleSelectReceipt = (receipt: Receipt) => {
-    soundEngine.playChime([880, 1174.66]);
+    playChime([880, 1174.66]);
     setSelectedReceipt(receipt);
   };
 
   const handleExportDossier = () => {
-    soundEngine.playChime([523.25, 783.99, 1046.5]);
-    exportLifeDossierMarkdown(processedData);
+    playChime([523.25, 783.99, 1046.5]);
+    exportLifeDossierMarkdown({
+      receipts,
+      receiptMap,
+      chapters,
+      patterns,
+      synthesis,
+      allTags,
+      allTypes,
+      allCities: [],
+      timeBounds: {
+        minDate: receipts[0]?.timestamp || '',
+        maxDate: receipts[receipts.length - 1]?.timestamp || '',
+      },
+    });
   };
 
   return (
@@ -82,11 +142,11 @@ export function App() {
       {/* Universal Header */}
       <Header
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={(tab) => setActiveTab(tab as any)}
         onUploadDataset={handleUploadDataset}
         onSelectPreset={handleSelectPreset}
         currentPreset={currentPreset}
-        totalReceipts={processedData.receipts.length}
+        totalReceipts={receipts.length}
         onExportDossier={handleExportDossier}
       />
 
@@ -94,13 +154,13 @@ export function App() {
       <main style={{ flex: 1 }}>
         {/* Landing / Hook (Synthesized Story Headline & Stat Chips) */}
         <LandingHook
-          synthesis={processedData.synthesis}
+          synthesis={synthesis}
           onExploreChapters={() => {
-            soundEngine.playChime([659.25, 880]);
+            playChime([659.25, 880]);
             setActiveTab('chapters');
           }}
           onExploreInsights={() => {
-            soundEngine.playChime([659.25, 880]);
+            playChime([659.25, 880]);
             setActiveTab('insights');
           }}
         />
@@ -108,43 +168,51 @@ export function App() {
         {/* Tab 1: Chapter Constellation */}
         {activeTab === 'chapters' && (
           <div className="animate-fade-in-up">
-            <ChapterConstellation
-              chapters={processedData.chapters}
-              receiptMap={processedData.receiptMap}
-              onSelectReceipt={handleSelectReceipt}
-            />
+            <Suspense fallback={<LoadingSpinner />}>
+              <ChapterConstellation
+                chapters={chapters}
+                receiptMap={receiptMap}
+                onSelectReceipt={handleSelectReceipt}
+              />
+            </Suspense>
           </div>
         )}
 
         {/* Tab 2: Named Pattern Insights */}
         {activeTab === 'insights' && (
           <div className="animate-fade-in-up">
-            <InsightCards
-              patterns={processedData.patterns}
-              receiptMap={processedData.receiptMap}
-              onSelectReceipt={handleSelectReceipt}
-            />
+            <Suspense fallback={<LoadingSpinner />}>
+              <InsightCards
+                patterns={patterns}
+                receiptMap={receiptMap}
+                onSelectReceipt={handleSelectReceipt}
+              />
+            </Suspense>
           </div>
         )}
 
         {/* Tab 3: Receipt Explorer */}
         {activeTab === 'explorer' && (
           <div className="animate-fade-in-up">
-            <ReceiptExplorer
-              receipts={processedData.receipts}
-              receiptMap={processedData.receiptMap}
-              allTags={processedData.allTags}
-              allTypes={processedData.allTypes}
-              onSelectReceipt={handleSelectReceipt}
-              highlightedReceiptId={highlightedReceiptId}
-            />
+            <Suspense fallback={<LoadingSpinner />}>
+              <ReceiptExplorer
+                receipts={receipts}
+                receiptMap={receiptMap}
+                allTags={allTags}
+                allTypes={allTypes}
+                onSelectReceipt={handleSelectReceipt}
+                highlightedReceiptId={highlightedReceiptId}
+              />
+            </Suspense>
           </div>
         )}
 
         {/* Tab 4: Macro Visualization */}
         {activeTab === 'macro' && (
           <div className="animate-fade-in-up">
-            <MacroVisualization receipts={processedData.receipts} />
+            <Suspense fallback={<LoadingSpinner />}>
+              <MacroVisualization receipts={receipts} />
+            </Suspense>
           </div>
         )}
       </main>
@@ -153,27 +221,32 @@ export function App() {
       {selectedReceipt && (
         <MomentModal
           receipt={selectedReceipt}
-          receiptMap={processedData.receiptMap}
+          receiptMap={receiptMap}
           onClose={() => setSelectedReceipt(null)}
           onSelectReceipt={(next) => setSelectedReceipt(next)}
         />
       )}
 
       {/* Footer */}
-      <footer style={{
-        borderTop: '1px solid var(--border-subtle)',
-        padding: '36px 0',
-        background: 'rgba(5, 7, 15, 0.9)',
-        color: 'var(--text-muted)',
-        fontSize: '0.85rem',
-      }}>
-        <div className="container" style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-          gap: '16px',
-        }}>
+      <footer
+        style={{
+          borderTop: '1px solid var(--border-subtle)',
+          padding: '36px 0',
+          background: 'rgba(5, 7, 15, 0.9)',
+          color: 'var(--text-muted)',
+          fontSize: '0.85rem',
+        }}
+      >
+        <div
+          className="container"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '16px',
+          }}
+        >
           <div>
             <div style={{ fontWeight: 700, color: '#ffffff', marginBottom: '2px' }}>
               Your Life, In Receipts
@@ -191,6 +264,14 @@ export function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <ReceiptProvider>
+      <AppContent />
+    </ReceiptProvider>
   );
 }
 
