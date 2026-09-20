@@ -1,0 +1,35 @@
+/* Component-specific & Responsive Styles */
+
+@media (max-width: 900px) {
+  .constellation-desktop {
+    display: none !important;
+  }
+  .constellation-mobile {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .constellation-desktop {
+    display: flex !important;
+  }
+  .constellation-mobile {
+    display: none !important;
+  }
+}
+
+/* Starlight constellation node pulse */
+.nebula-pulse {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Card hover lift */
+.card-interactive {
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card-interactive:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-bright);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
+}

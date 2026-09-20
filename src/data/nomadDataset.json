@@ -1,0 +1,164 @@
+{
+  "story_year": 2024,
+  "dataset_name": "The Polymath Nomad — All 9 Types Showcase",
+  "generated_note": "A multi-domain digital footprint demonstrating music, movies, places, purchases, photos, messages, searches, events, and notes.",
+  "receipts": [
+    {
+      "id": "nomad_01",
+      "type": "place",
+      "timestamp": "2024-03-01T14:30:00Z",
+      "title": "Shibuya Crossing",
+      "subtitle": "Tokyo Metropolis",
+      "amount": null,
+      "location": { "lat": 35.6595, "lng": 139.7005, "city": "Tokyo" },
+      "tags": ["travel", "urban", "arrival"],
+      "meta": { "transport": "Narita Express", "weather": "Crisp spring" }
+    },
+    {
+      "id": "nomad_02",
+      "type": "music",
+      "timestamp": "2024-03-01T15:10:00Z",
+      "title": "Komorebi",
+      "subtitle": "Haruka Nakamura · Nica",
+      "amount": null,
+      "location": { "lat": 35.6595, "lng": 139.7005, "city": "Tokyo" },
+      "tags": ["ambient", "travel", "japan"],
+      "meta": { "artist": "Haruka Nakamura", "headphones": "Sony WH-1000XM5" }
+    },
+    {
+      "id": "nomad_03",
+      "type": "purchase",
+      "timestamp": "2024-03-01T16:00:00Z",
+      "title": "Tonkotsu Ramen & Gyoza",
+      "subtitle": "Ichiran Shibuya",
+      "amount": 1450.0,
+      "location": { "lat": 35.6595, "lng": 139.7005, "city": "Tokyo" },
+      "tags": ["food", "expense", "japan"],
+      "meta": { "currency": "JPY", "spice_level": 3 }
+    },
+    {
+      "id": "nomad_04",
+      "type": "photo",
+      "timestamp": "2024-03-01T16:45:00Z",
+      "title": "Neon Reflections on Wet Asphalt",
+      "subtitle": "Shibuya Dogenzaka",
+      "amount": null,
+      "location": { "lat": 35.6595, "lng": 139.7005, "city": "Tokyo" },
+      "tags": ["urban", "photo", "japan"],
+      "meta": { "iso": 800, "aperture": "f/1.8", "lens": "35mm" }
+    },
+    {
+      "id": "nomad_05",
+      "type": "note",
+      "timestamp": "2024-03-01T23:30:00Z",
+      "title": "Thoughts on Japanese spatial design",
+      "subtitle": "Hotel Capsule Journal",
+      "amount": null,
+      "tags": ["reflection", "late_night", "design"],
+      "meta": { "word_count": 210 }
+    },
+    {
+      "id": "nomad_06",
+      "type": "search",
+      "timestamp": "2024-03-02T01:15:00Z",
+      "title": "why do Tokyo trains run so quietly",
+      "subtitle": "Google Search Query",
+      "amount": null,
+      "tags": ["curiosity", "late_night"],
+      "meta": { "engine": "Google", "results_clicked": 2 }
+    },
+    {
+      "id": "nomad_07",
+      "type": "music",
+      "timestamp": "2024-03-02T02:40:00Z",
+      "title": "Substrata",
+      "subtitle": "Biosphere · Substrata",
+      "amount": null,
+      "tags": ["late_night", "ambient"],
+      "meta": { "artist": "Biosphere", "ms_played": 360000 }
+    },
+    {
+      "id": "nomad_08",
+      "type": "message",
+      "timestamp": "2024-03-02T09:00:00Z",
+      "title": "Landed safely, heading to the lab!",
+      "subtitle": "To: Maya (Signal)",
+      "amount": null,
+      "tags": ["social", "travel"],
+      "meta": { "platform": "Signal", "status": "read" }
+    },
+    {
+      "id": "nomad_09",
+      "type": "event",
+      "timestamp": "2024-03-03T10:00:00Z",
+      "title": "Tokyo Future Interface Summit",
+      "subtitle": "Roppongi Hills Hall",
+      "amount": 25000.0,
+      "location": { "lat": 35.6605, "lng": 139.7292, "city": "Tokyo" },
+      "tags": ["tech", "event", "career"],
+      "meta": { "badge": "Speaker Pass", "role": "Presenter" }
+    },
+    {
+      "id": "nomad_10",
+      "type": "movie",
+      "timestamp": "2024-03-04T21:00:00Z",
+      "title": "Spirited Away (35mm Archival Print)",
+      "subtitle": "Bunkamura Le Cinéma",
+      "amount": 1800.0,
+      "location": { "lat": 35.6595, "lng": 139.7005, "city": "Tokyo" },
+      "tags": ["culture", "cinema", "evening"],
+      "meta": { "director": "Hayao Miyazaki", "format": "35mm" }
+    },
+    {
+      "id": "nomad_11",
+      "type": "place",
+      "timestamp": "2024-04-10T11:00:00Z",
+      "title": "Tempelhof Field",
+      "subtitle": "Berlin Airport Park",
+      "amount": null,
+      "location": { "lat": 52.4731, "lng": 13.4044, "city": "Berlin" },
+      "tags": ["travel", "outdoors"],
+      "meta": { "activity": "Rollerblading on runway" }
+    },
+    {
+      "id": "nomad_12",
+      "type": "purchase",
+      "timestamp": "2024-04-10T13:00:00Z",
+      "title": "Vintage Modular Synthesizer Module",
+      "subtitle": "SchneidersLaden Kreuzberg",
+      "amount": 18500.0,
+      "location": { "lat": 52.499, "lng": 13.418, "city": "Berlin" },
+      "tags": ["hardware", "expense", "music"],
+      "meta": { "currency": "EUR", "brand": "Make Noise" }
+    },
+    {
+      "id": "nomad_13",
+      "type": "music",
+      "timestamp": "2024-04-10T23:45:00Z",
+      "title": "Selected Ambient Works 85-92",
+      "subtitle": "Aphex Twin · R&S Records",
+      "tags": ["late_night", "electronic", "berlin"],
+      "meta": { "artist": "Aphex Twin", "format": "FLAC" }
+    },
+    {
+      "id": "nomad_14",
+      "type": "note",
+      "timestamp": "2024-04-11T02:00:00Z",
+      "title": "Algorithmic synthesis and human emotion",
+      "subtitle": "Studio Notebook",
+      "tags": ["late_night", "code", "philosophy"],
+      "meta": { "word_count": 340 }
+    },
+    {
+      "id": "nomad_15",
+      "type": "event",
+      "timestamp": "2024-05-18T18:00:00Z",
+      "title": "Berlin Sound Art Biennale",
+      "subtitle": "Kraftwerk Berlin",
+      "amount": 35.0,
+      "location": { "lat": 52.511, "lng": 13.42, "city": "Berlin" },
+      "tags": ["art", "event", "sound"],
+      "meta": { "curator": "Tresor Foundation" }
+    }
+  ]
+}
