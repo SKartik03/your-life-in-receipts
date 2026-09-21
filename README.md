@@ -5,8 +5,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19.0+-61DAFB.svg)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.0+-646CFF.svg)](https://vitejs.dev/)
-[![Tests](https://img.shields.io/badge/Tests-100%25%20Passing-brightgreen.svg)](https://nodejs.org/)
-[![Accessibility](https://img.shields.io/badge/WCAG%202.1-AA%20Compliant-success.svg)](https://www.w3.org/WAI/WCAG21/quickref/)
+[![Tests](https://img.shields.io/badge/Tests-9%20Passing-brightgreen.svg)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
@@ -36,7 +35,7 @@ graph TD
         D --> D1[Cross-Type Linker: crossTypeLinker.ts]
         D --> D2[Chapter Clusterer: chapterClusterer.ts]
         D --> D3[Pattern Detector: patternDetector.ts]
-        D --> D4[Synthesis Generator: lifeSynthesizer.ts]
+        D --> D4[Pipeline & Synthesis: index.ts]
     end
     
     D1 --> E[Global State: ReceiptContext.tsx]
@@ -85,7 +84,7 @@ The entire codebase never touches raw field names. The standalone [`src/engine/a
 
 ## ⚡ 2. The Connection Engine (`src/engine/`)
 
-The Connection Engine consists of pure, deterministic data-transformation functions that execute client-side in under 40ms upon dataset load.
+The Connection Engine consists of pure, deterministic data-transformation functions that execute client-side in ~10–20ms on the bundled sample dataset (measured with `performance.now()`).
 
 ### A. Cross-Type Linking Engine (`crossTypeLinker.ts`)
 For every receipt, computes up to 3 related receipts of a **strictly different type** using multi-factor scoring:
@@ -138,14 +137,13 @@ The application implements a multi-breakpoint responsive design system defined i
 
 ---
 
-## ♿ 4. Accessibility Compliance (WCAG 2.1 AA)
+## ♿ 4. Accessibility Improvements
 
-- **Keyboard Operability**: Full keyboard navigation (`Tab`, `Shift+Tab`, `Enter`, `Space`, `Escape`) across all interactive cards, chips, and chapters via `clickableA11yProps`.
-- **Focus Trapping**: `useFocusTrap` ensures keyboard focus cannot escape active modals and restores focus upon dismissal.
-- **Nested Event Isolation**: Inline related-receipt chips stop keyboard propagation, preventing unwanted parent modal triggers.
-- **ARIA & Dialog Semantics**: Both modals declare `role="dialog"`, `aria-modal="true"`, `tabIndex={-1}`, and dynamic descriptive `aria-label`.
-- **Icon-Only Controls**: All icon-only buttons include descriptive `aria-label` attributes; toggle buttons declare `aria-pressed`.
-- **Color Contrast**: All text elements exceed the **4.5:1** contrast ratio against the darkest cosmic backgrounds (`#070913` / `#0f162b`).
+- **Keyboard Navigation**: Full keyboard navigation (`Tab`, `Shift+Tab`, `Enter`, `Space`, `Escape`) across all interactive cards, chips, and chapters via `clickableA11yProps` (including `stopPropagation` on nested chips).
+- **Focus Trap**: `useFocusTrap` moves focus to the first focusable element inside active modals, keeps focus cycling within the modal, and restores focus to the triggering element upon closing.
+- **ARIA Dialog Roles**: Both modals declare `role="dialog"`, `aria-modal="true"`, `tabIndex={-1}`, and dynamic descriptive `aria-label`.
+- **aria-labels**: Descriptive `aria-label` attributes on icon-only buttons (search clear, modal close, dataset selector, nav tabs).
+- **aria-pressed**: The sound toggle button declares `aria-pressed` reflecting ambient audio playback state.
 
 ---
 
@@ -166,15 +164,15 @@ The application implements a multi-breakpoint responsive design system defined i
 
 ## 🧪 6. Automated Testing Suite
 
-The repository includes a comprehensive automated test suite powered by Node.js native test runner:
+The repository includes an automated test suite (9 passing tests across 5 suites) powered by the Node.js native test runner:
 
 ```bash
 # Run all unit and integration tests
 npm test
 ```
 
-### Test Coverage Summary:
-- **Adapter & Schema Conformance**: 100% pass rate validating normalization, field fallbacks, and prototype pollution resistance.
+### Test Summary (9 tests, 5 suites):
+- **Adapter & Schema Conformance**: Validates normalization, field fallbacks, and prototype pollution resistance.
 - **Cross-Type Linking Constraints**: Verifies that links connect strictly different types, capping at 3 links per receipt.
 - **Chapter Clustering Integrity**: Verifies timeline coverage and statistical calculations.
 - **Pattern Evidence Verification**: Verifies presence of concrete receipt IDs backing each named pattern.
@@ -182,7 +180,21 @@ npm test
 
 ---
 
-## 🚀 7. Local Setup & Build
+## ⚠️ 7. Limitations
+
+- **Rule-Based Engine**: All connections, chapter boundaries, and pattern discoveries are generated via deterministic heuristics and rule-based scoring algorithms (no machine learning models or runtime AI generation).
+- **Bundled Sample Dataset**: The default dataset bundled in the repository (`src/data/sampleData.json`) is a small sample containing 85 records.
+- **Accepted Data Formats**: The adapter (`src/engine/adapter.ts`) accepts either a JSON array of receipt objects or a JSON envelope object containing an array under `receipts`, `data`, `items`, or `records`. It normalizes receipts into the internal 9-type schema (`music`, `movie`, `place`, `purchase`, `photo`, `message`, `search`, `event`, `note`).
+
+---
+
+## 🤖 8. Built With
+
+This project was built during the Frontend Arena hackathon with AI assistance using Google Antigravity.
+
+---
+
+## 🚀 9. Local Setup & Build
 
 ```bash
 # 1. Install dependencies
